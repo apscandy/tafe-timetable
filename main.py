@@ -1,6 +1,7 @@
 
 import os
 import discord
+from discord import client
 from discord.ext import commands
 from dotenv import load_dotenv, find_dotenv
 from tafe import TafeScrape
@@ -12,7 +13,8 @@ bot = commands.Bot(command_prefix='!')
 class DiscordBot:
 
     @staticmethod
-    @bot.command(name="timetable")
+    @client.command(name="timetable")
+    #@bot.command(name="timetable")
     async def times(ctx, *info):
         """Outputs the timetable data to discord"""
         info = " ".join(info)
