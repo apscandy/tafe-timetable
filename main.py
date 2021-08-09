@@ -19,8 +19,8 @@ class DiscordBot:
         info = " ".join(info)
         tafe_timetable = TafeScrape(info)
         try:
-            embed = discord.Embed(title="Your title here", description="Your desc here") #,color=Hex code
-            embed.add_field(name="Name", value=tafe_timetable.get_timetable_output())
+            embed = discord.Embed(title="Your timetable results", description=info) #,color=Hex code
+            embed.add_field(name="Timetable", value=tafe_timetable.get_timetable_output())
             await ctx.send(embed=embed)
             #await ctx.send(tafe_timetable.get_timetable_output())
         except Exception as e:
@@ -33,8 +33,8 @@ class DiscordBot:
         info = " ".join(info)
         tafe_search = TafeScrape(info)
         try:
-            embed = discord.Embed(title="Your title here", description="Your desc here") #,color=Hex code
-            embed.add_field(name="Name", value=tafe_search.get_search_output())
+            embed = discord.Embed(title="All classes find in Brisbane campuses", description="Tafe Queensland Brisbane") #,color=Hex code
+            embed.add_field(name="Classes", value=tafe_search.get_search_output())
             await ctx.send(embed=embed)
             #await ctx.send(tafe_search.get_search_output())
         except Exception as e:
