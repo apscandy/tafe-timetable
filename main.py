@@ -1,4 +1,3 @@
-
 import os
 import discord
 from discord import client

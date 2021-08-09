@@ -3,7 +3,7 @@ import requests
 
 class Quote:
 
-    def __init__(self, quote_request) -> str:
+    def __init__(self, quote_request:str) -> str:
         self.quote_request = quote_request
         self.quote_url = "https://zenquotes.io/api/"
 

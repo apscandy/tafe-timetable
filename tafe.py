@@ -1,26 +1,3 @@
-#!/usr/bin/python3
-'''
-NAME
-    Ceaser.py - cipher and print message
-
-SYNOPSIS
-    ...$ ./Ceaser.py -m "Hello" -k 12
-    ...$ ./Ceaser.py --message "Hello" --key 12
-    ...$ ./Ceaser.py -h
-
-DESCRIPTION
-    Caesar cipher is to replace each plaintext letter with a
-     different one a fixed number of places down the alphabet.
-    This program Has a right shift default I.E. A becomes B with a fixed key of 1,
-     you shift left with a negative key I.E. -1 B then becomes A
-
-SEE ALSO
-    https://en.wikipedia.org/wiki/Caesar_cipher
-    https://github.com/apscandy/ICTPRG405-Python/blob/main/AT1/Ceaser.py
-
-BUGS
-    Beware of entering `@#` in the Cli as bash, terminal and powershell try to interpret `@#` and will brake the script
-'''
 import requests
 import json
 from requests.utils import requote_uri
@@ -81,7 +58,7 @@ class TafeScrape:
         """
         Parses the html data and outputs text of page
 
-        Returns:
+        Fetches:
             <div class="pageheader" id="GroupName">Group: 22334VIC Cert IV Cyber Security - QLD Government Customer &amp; Digital Group Mar 2021 South Bank</div>
             <div class="pageheader">Week: 02/08/2021 - 08/08/2021 (Week 32, 2021)</div>
 
@@ -160,6 +137,32 @@ class TafeScrape:
                 </tr>
             </table>
             <i>This timetable last changed: 02/08/2021</i>
+        
+        Return:
+            Group: 22334VIC Cert IV Cyber Security 2B Jan 2021 South Bank
+            Week: 09/08/2021 - 15/08/2021 (Week 33, 2021)
+            Monday, August 9, 2021
+            8:00AM - 11:00AM
+            Room
+            SB,G Block.Lvl 2,Rm 009 - Computer Lab(29C) PCSM (Southbank)
+            Unit(s)
+            VU21991, VU21995
+            Tuesday, August 10, 2021
+            9:00AM - 1:00PM Independent Learning
+            Unit(s)
+            ICTPRG405, BSBWHS401, VU21991, VU21992, VU21997, VU21996, VU21995
+            Thursday, August 12, 2021
+            8:00AM - 11:00AM
+            Room
+            SB,G Block.Lvl 2,Rm 005 - Computer Lab(30C) PCSM (Southbank)
+            Unit(s)
+            VU21992
+            11:30AM - 2:30PM
+            Room
+            SB,G Block.Lvl 2,Rm 005 - Computer Lab(30C) PCSM (Southbank)
+            Unit(s)
+            BSBWHS401, VU21996
+            This timetable last changed: 09/08/2021
 
         """
         data = requests.get(self.url_timetable_(), timeout=5)
@@ -173,7 +176,7 @@ class TafeScrape:
         """
         Returns the json data for the current week
 
-        Returns:
+        Fetches:
             {
               "success": true,
               "responseText": [
@@ -260,6 +263,9 @@ class TafeScrape:
               ],
               "weekNo": 202132
             }
+		
+		Returns:
+			"weekNo": 202132
         """
         data = requests.get(self.url_week_(), timeout=5)
         find_week = json.loads(data.text)
