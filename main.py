@@ -46,7 +46,7 @@ class DiscordBot:
         """Outputs the quote request data to discord"""
         get_quote = Quote(quote_request)
         embed = discord.Embed(title="Quote...") #,color=Hex code
-        embed.add_field(value=get_quote.quotes())
+        embed.add_field(name="Your quote", value=get_quote.quotes())
         await ctx.send(embed=embed)
         #await ctx.send(get_quote.quotes())
 
