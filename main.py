@@ -14,7 +14,6 @@ class DiscordBot:
 
     @staticmethod
     @client.command(name="timetable")
-    #@bot.command(name="timetable")
     async def times(ctx, *info):
         """Outputs the timetable data to discord"""
         info = " ".join(info)
