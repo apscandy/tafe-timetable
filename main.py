@@ -33,7 +33,7 @@ class DiscordBot:
         info = " ".join(info)
         tafe_search = TafeScrape(info)
         try:
-            embed = discord.Embed(title="All classes find in Brisbane campuses", description="Tafe Queensland Brisbane") #,color=Hex code
+            embed = discord.Embed(title="All classes found in Brisbane campuses", description=f"Search resalts for: {info}") #,color=Hex code
             embed.add_field(name="Classes", value=tafe_search.get_search_output())
             await ctx.send(embed=embed)
             #await ctx.send(tafe_search.get_search_output())
