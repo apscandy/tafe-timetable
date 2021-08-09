@@ -19,11 +19,11 @@ class DiscordBot:
         info = " ".join(info)
         tafe_timetable = TafeScrape(info)
         try:
-            #embed = discord.Embed(title="Your title here", description="Your desc here") #,color=Hex code
-            #embed.add_field(name="Name", value=tafe_timetable.get_timetable_output())
-            #embed.set_footer(name="footer") #if you like to
-            #await ctx.send(embed=embed)
-            await ctx.send(tafe_timetable.get_timetable_output())
+            embed = discord.Embed(title="Your title here", description="Your desc here") #,color=Hex code
+            embed.add_field(name="Name", value=tafe_timetable.get_timetable_output())
+            embed.set_footer(name="footer") #if you like to
+            await ctx.send(embed=embed)
+            #await ctx.send(tafe_timetable.get_timetable_output())
         except Exception as e:
             await ctx.send(e)
 
