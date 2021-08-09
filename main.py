@@ -1,5 +1,6 @@
 
 import os
+import discord
 from discord.ext import commands
 from dotenv import load_dotenv, find_dotenv
 from tafe import TafeScrape
@@ -28,7 +29,11 @@ class DiscordBot:
         info = " ".join(info)
         tafe_search = TafeScrape(info)
         try:
-            await ctx.send(tafe_search.get_search_output())
+            embed = discord.Embed(title="Your title here", description="Your desc here") #,color=Hex code
+            embed.add_field(name="Name", value=tafe_search.get_search_output())
+            embed.set_footer(name="footer") #if you like to
+            await ctx.send(embed=embed)
+            #await ctx.send(tafe_search.get_search_output())
         except Exception as e:
             await ctx.send(e)
 
