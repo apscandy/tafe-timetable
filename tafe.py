@@ -141,16 +141,19 @@ class TafeScrape:
         Return:
             Group: 22334VIC Cert IV Cyber Security 2B Jan 2021 South Bank
             Week: 09/08/2021 - 15/08/2021 (Week 33, 2021)
+            
             Monday, August 9, 2021
             8:00AM - 11:00AM
             Room
             SB,G Block.Lvl 2,Rm 009 - Computer Lab(29C) PCSM (Southbank)
             Unit(s)
             VU21991, VU21995
+            
             Tuesday, August 10, 2021
             9:00AM - 1:00PM Independent Learning
             Unit(s)
             ICTPRG405, BSBWHS401, VU21991, VU21992, VU21997, VU21996, VU21995
+            
             Thursday, August 12, 2021
             8:00AM - 11:00AM
             Room
