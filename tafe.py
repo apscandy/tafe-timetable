@@ -168,7 +168,10 @@ class TafeScrape:
         data = requests.get(self.url_timetable_(), timeout=5)
         soup = BeautifulSoup(data.text, 'html.parser')
         output = ""
+        week_days = ["Monday", "Tuesday", "Wensdays", "Thursday", "Friday"]
         for string in soup.stripped_strings:
+            if string.startswith(tuple(week_days)):
+              string = "\n" + string
             output += string + "\n"
         return str(output)
 
