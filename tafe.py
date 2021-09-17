@@ -22,7 +22,8 @@ class TafeScrape:
         self.info = self.convert_name()
         return str(self.url_timetable +
                    "id=" + requote_uri(self.info) +
-                   "&week=" + self.get_week_output())
+                   "&week=" + self.get_week_output() +
+                   "&duration=1")
 
     def url_week_(self) -> str:
         """
