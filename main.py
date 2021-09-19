@@ -14,7 +14,13 @@ class DiscordBot:
     @staticmethod
     @bot.command(name="timetable")
     async def times(ctx, *info):
-        """Outputs the timetable data to discord"""
+        """
+        Outputs the timetable data to discord
+        
+        TODO:
+            Add filter to check the length of the message must be <= 1024 else an error is raised, ERROR: 400 Bad Request (error code: 50035): Invalid Form Body
+             In embeds.0.fields.0.value: Must be 1024 or fewer in length. 
+        """
         info = " ".join(info)
         tafe_timetable = TafeScrape(info)
         try:
